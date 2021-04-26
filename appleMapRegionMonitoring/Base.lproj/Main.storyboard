@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SDa-7h-OXE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="appleMapRegionMonitoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gAS-Zm-54P">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="00P-3S-K9V"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-Ee-vuQ">
+                                <rect key="frame" x="87" y="812" width="240" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3BK-m1-ojY">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="gcs-5R-cRY">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="320"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Keep user location in center">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                </variation>
+                                <connections>
+                                    <action selector="enableUserLocationInCenterButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BYg-pY-aZ0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gAS-Zm-54P" secondAttribute="trailing" id="5ku-hd-GCr"/>
+                            <constraint firstItem="Zij-Ee-vuQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QSZ-cf-ASV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zij-Ee-vuQ" secondAttribute="bottom" constant="20" id="StE-sx-Jh6"/>
+                            <constraint firstAttribute="bottom" secondItem="gAS-Zm-54P" secondAttribute="bottom" id="aTb-0w-09T"/>
+                            <constraint firstItem="gAS-Zm-54P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gUr-mm-Lxk"/>
+                            <constraint firstItem="gAS-Zm-54P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t8n-Wv-afu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="gQe-VC-b7m"/>
+                    <connections>
+                        <outlet property="locationButton" destination="Zij-Ee-vuQ" id="vWV-79-w0X"/>
+                        <outlet property="mapView" destination="gAS-Zm-54P" id="rAD-NF-xL8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="92.203898050974516"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H4Z-9W-mff">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SDa-7h-OXE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pHa-Mo-Yqe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vWe-9F-AGK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZI-1y-64h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="92.203898050974516"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
